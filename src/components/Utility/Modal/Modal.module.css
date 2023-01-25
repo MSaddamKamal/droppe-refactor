@@ -1,0 +1,42 @@
+.react__Modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	max-width: 80rem;
+	background: #ffffff;
+	border: none;
+	border-radius: 1.5rem;
+	padding: 3rem;
+}
+
+.react__Modal:focus {
+	outline: none;
+}
+
+.modal__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	backdrop-filter: blur(1rem);
+}
+
+.close__icon__container {
+	padding-bottom: 2rem;
+	display: grid;
+	justify-items: end;
+}
+
+.modal__close {
+	cursor: pointer;
+	color: black;
+	font-size: 3rem;
+	line-height: 0;
+	background: none;
+	border: none;
+}
