@@ -21,7 +21,6 @@
     "react-scripts": "^5.0.1",
     "@hookform/resolvers": "^2.9.10",
     "yup": "^0.32.11"
-
   },
   "scripts": {
     "start": "react-scripts start",
