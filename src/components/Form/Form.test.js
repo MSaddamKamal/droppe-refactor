@@ -26,5 +26,20 @@ describe('Testing Add Product Form', () => {
 		expect(descriptionInput).toBeInTheDocument()
 	})
 
+	test('Should Expect Title,Price & Descrtipion Inputs', () => {
+		fireEvent.change(titleInput, { target: { value: 'test' } })
+		expect(screen.getByDisplayValue('test') == titleInput).toBe(true)
 
+		fireEvent.change(priceInput, { target: { value: 40 } })
+		expect(screen.getByDisplayValue(40) == priceInput).toBe(true)
+
+		fireEvent.change(descriptionInput, {
+			target: { value: 'testing description' },
+		})
+		expect(
+			screen.getByDisplayValue('testing description') == descriptionInput
+		).toBe(true)
+	})
+
+	
 })
