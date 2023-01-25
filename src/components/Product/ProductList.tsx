@@ -7,7 +7,6 @@ interface ProductListProps {
   toggleFav: ToggleFavroute
 }
 
-
 export const ProductList = ({ products, toggleFav }: ProductListProps) => {
   return (
 		<>
@@ -23,6 +22,5 @@ export const ProductList = ({ products, toggleFav }: ProductListProps) => {
 		</>
   )
 }
-
 
 export default ProductList

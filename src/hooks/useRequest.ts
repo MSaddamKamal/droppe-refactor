@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useRequest = (url: string, payload?: object) => {
   const [loading, setLoading] = useState(false)
