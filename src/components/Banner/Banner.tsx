@@ -13,8 +13,8 @@ export default function Banner () {
 			  justifyContent: 'space-evenly'
 			}}
 		>
-			<img src={img1} style={{ maxHeight: '15em', display: 'block' }} />
-			<img src={img2} style={{ maxHeight: '15rem', display: 'block' }} />
+			<img src={img1} alt="Banner-1" style={{ maxHeight: '15em', display: 'block' }} />
+			<img src={img2} alt="Banner-1" style={{ maxHeight: '15rem', display: 'block' }} />
 		</div>
   )
 }
