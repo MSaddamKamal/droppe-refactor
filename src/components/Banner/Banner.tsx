@@ -6,7 +6,7 @@ import styles from './Banner.module.css'
 export default function Banner () {
   return (
 		<div
-			className={['container', styles.main].join(' ')}
+			className={`container ${styles.main}`}
 			style={{
 			  margin: '50px inherit',
 			  display: 'flex',

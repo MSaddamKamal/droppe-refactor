@@ -74,7 +74,7 @@ export const ShopApp = () => {
       <Banner />
       <Stats totalProducts={productCount} favourites={favCount} />
       <div
-				className={['container', styles.main].join(' ')}
+				className={`container ${styles.main}`}
 				style={{ paddingTop: 0 }}
 			>
 				<div className={styles.buttonWrapper}>
