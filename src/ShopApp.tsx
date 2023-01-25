@@ -8,6 +8,7 @@ import Loader from 'components/Utility/Loader'
 import useRequest from 'hooks/useRequest'
 import Modal from 'components/Utility/Modal'
 import Form from 'components/Form'
+import Button from 'components/Utility/Button'
 
 export const ShopApp = () => {
 
@@ -17,6 +18,7 @@ export const ShopApp = () => {
   const [productCount, setProductCount] = useState(0)
   const [favCount, setFavCount] = useState(0)
   const [openModal, setOpenModal] = useState(false)
+  const [alertMessage, setAlertMessage] = useState('')
 
   useEffect(() => {
     setProductsData(data)
@@ -48,9 +50,23 @@ export const ShopApp = () => {
 
 
   const closeModal = () => { setOpenModal(false) }
+  const showModal = () => { setOpenModal(true) }
 
+
+  const showAlert = (msg: string) => {
+    setAlertMessage(msg)
+    setTimeout(() => {
+      setAlertMessage('')
+    }, 3000)
+  }
 
   const getSubmitResponse = (error: boolean, productPayload: object) => {
+    if (error) {
+      showAlert('Could Not Add Prodcut')
+    } else {
+      setProductsData((prev) => [...prev, productPayload])
+      showAlert('Product Added Successfully')
+    }
     closeModal()
   }
 
@@ -61,6 +77,17 @@ export const ShopApp = () => {
       <Header />
       <Banner />
       <Stats totalProducts={productCount} favourites={favCount} />
+      <div
+				className={['container', styles.main].join(' ')}
+				style={{ paddingTop: 0 }}
+			>
+				<div className={styles.buttonWrapper}>
+					<Button onClick={showModal}>Send product proposal</Button>
+					{alertMessage !== '' && (
+						<div className={styles.alert_msg}>{alertMessage}</div>
+					)}
+				</div>
+			</div>
 			<Loader isLoading={loading} />
       <ProductList products={productsData} toggleFav={togglefav} />
 				{openModal && (
