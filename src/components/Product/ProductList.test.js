@@ -33,4 +33,15 @@ describe('Testing Products Listing', () => {
 		const el = screen.getByText('No Data Avaliable')
 		expect(el).toBeInTheDocument()
 	})
+
+	test('Able To Render Products in Product List', () => {
+		const toggle = jest.fn()
+		render(<ProductList products={dummyData} toggleFav={{ toggle }} />)
+		const el = screen.queryByText('No Data Avaliable')
+		expect(el).not.toBeInTheDocument()
+		const productTitle1 = screen.getByText('product 1')
+		expect(productTitle1).toBeInTheDocument()
+		const productTitle2 = screen.getByText('product 2')
+		expect(productTitle2).toBeInTheDocument()
+	})
 })
