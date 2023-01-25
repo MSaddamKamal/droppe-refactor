@@ -4,6 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@hookform/resolvers": "^2.9.10",
+		"@testing-library/user-event": "^14.2.1",
 		"@types/node": "^16.7.13",
 		"@types/react": "^16.9.0",
 		"@types/react-dom": "^16.9.0",
