@@ -55,5 +55,17 @@ describe('Testing Add Product Form', () => {
 		})
 	})
 
-	
+	test('price should display number validation', async () => {
+		fireEvent.click(
+			screen.getByRole('button', {
+				name: /add/i,
+			})
+		)
+		const user = userEvent.setup()
+		user.type(priceInput, 'hello')
+		await user.clear(priceInput)
+		await waitFor(() => {
+			expect(screen.getByText('Price must be a number')).toBeInTheDocument()
+		})
+	})
 })
