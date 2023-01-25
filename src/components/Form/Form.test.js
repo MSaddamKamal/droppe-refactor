@@ -41,5 +41,19 @@ describe('Testing Add Product Form', () => {
 		).toBe(true)
 	})
 
+	test('title should display required validation', async () => {
+		fireEvent.click(
+			screen.getByRole('button', {
+				name: /add/i,
+			})
+		)
+		const user = userEvent.setup()
+		user.type(titleInput, 'hello')
+		await user.clear(titleInput)
+		await waitFor(() => {
+			expect(screen.getByText('Your product needs a title')).toBeInTheDocument()
+		})
+	})
+
 	
 })
