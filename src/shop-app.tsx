@@ -10,6 +10,7 @@ import img1 from './images/img1.png'
 import img2 from './images/img2.png'
 import styles from './shopApp.module.css'
 import Header from 'components/Header'
+import Banner from 'components/Banner'
 
 export class ShopApp extends React.Component<
 {},
@@ -115,16 +116,7 @@ export class ShopApp extends React.Component<
     return (
       <React.Fragment>
        <Header />
-
-        <>
-           <span
-              className={['container', styles.main].join(' ')}
-              style={{ margin: '50px inherit', display: 'flex', justifyContent: 'space-evenly' }}
-           >
-            <img src={img1} style={{ maxHeight: '15em', display: 'block' }} />
-            <img src={img2} style={{ maxHeight: '15rem', display: 'block' }} />
-           </span>
-        </>
+       <Banner />
 
         <div className={['container', styles.main].join(' ')} style={{ paddingTop: 0 }}>
           <div className={styles.buttonWrapper}>
