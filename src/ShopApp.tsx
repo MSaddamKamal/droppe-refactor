@@ -11,7 +11,6 @@ import Form from 'components/Form'
 import Button from 'components/Utility/Button'
 
 export const ShopApp = () => {
-
   const url = 'https://fakestoreapi.com/products' // can be referenced from env or config file as well
   const { loading, error, errorMsg, data } = useRequest(url)
   const [productsData, setProductsData] = useState<any[]>([])
@@ -28,7 +27,6 @@ export const ShopApp = () => {
     setProductCount(productsData.length)
   }, [productsData])
 
-  
   const togglefav = (id: number | string) => {
     let isfav = false
 
@@ -48,10 +46,8 @@ export const ShopApp = () => {
     setFavCount((prev) => (isfav ? prev + 1 : prev - 1))
   }
 
-
   const closeModal = () => { setOpenModal(false) }
   const showModal = () => { setOpenModal(true) }
-
 
   const showAlert = (msg: string) => {
     setAlertMessage(msg)
