@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Droppe+Sans:wght@300;400;600&display=swap"); /* Font used in old version of webshop */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #7c7c7c;
+  font-family: "Open Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Open Sans";
+  font-weight: 400;
+  background-color: #f8f8f8;
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+}
