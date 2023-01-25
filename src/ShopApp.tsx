@@ -12,6 +12,7 @@ import Header from 'components/Header'
 import Banner from 'components/Banner'
 import Stats from 'components/Stats'
 import ProductList from 'components/Product/ProductList'
+import Loader from 'components/Utility/Loader'
 import useRequest from 'hooks/useRequest'
 
 // export class ShopApp extends React.Component<
@@ -207,6 +208,7 @@ export const ShopApp = () => {
       <Header />
       <Banner />
       <Stats totalProducts={productCount} favourites={favCount} />
+			<Loader isLoading={loading} />
       <ProductList products={productsData} toggleFav={togglefav} />
     </div>
   )
