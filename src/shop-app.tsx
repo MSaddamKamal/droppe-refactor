@@ -11,6 +11,7 @@ import img2 from './images/img2.png'
 import styles from './shopApp.module.css'
 import Header from 'components/Header'
 import Banner from 'components/Banner'
+import Stats from 'components/Stats'
 
 export class ShopApp extends React.Component<
 {},
@@ -133,13 +134,7 @@ export class ShopApp extends React.Component<
                 <i>{this.state.message}</i>
              </div>}
           </div>
-
-          <div className={styles.statsContainer}>
-            <span>Total products: {this.state.prodCount}</span>
-            {' - '}
-            <span>Number of favorites: {this.state.numFavorites}</span>
-          </div>
-
+          <Stats totalProducts={this.state.prodCount} favourites={this.state.numFavorites} />
           {products && !!products.length ? <ProductList products={products} onFav={this.favClick} /> : <div></div>}
         </div>
 
