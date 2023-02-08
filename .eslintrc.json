@@ -21,6 +21,11 @@
     "rules": {
         "no-tabs": 0,
         "no-mixed-spaces-and-tabs": 0,
+        "no-multi-spaces": "off",
+        "arrow-spacing":"off",
+        "no-trailing-spaces":"off",
+        "@typescript-eslint/object-curly-spacing":"off",
+        "@typescript-eslint/comma-spacing":"off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/prefer-optional-chain":"off",
         "@typescript-eslint/explicit-function-return-type": "off",
