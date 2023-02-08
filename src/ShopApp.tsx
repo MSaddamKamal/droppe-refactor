@@ -1,4 +1,4 @@
-import  {useEffect, useState} from 'react'
+import { useEffect, useState, Suspense, lazy } from 'react'
 import styles from './ShopApp.module.css'
 import Header from 'components/Header'
 import Banner from 'components/Banner'
@@ -6,18 +6,18 @@ import Stats from 'components/Stats'
 import ProductList from 'components/Product/ProductList'
 import Loader from 'components/Utility/Loader'
 import useRequest from 'hooks/useRequest'
-import Modal from 'components/Utility/Modal'
 import Form from 'components/Form'
 import Button from 'components/Utility/Button'
 
 export const ShopApp = () => {
   const url = 'https://fakestoreapi.com/products' // can be referenced from env or config file as well
-  const { loading, error, errorMsg, data } = useRequest(url)
+  const { loading, data } = useRequest(url)
   const [productsData, setProductsData] = useState<any[]>([])
   const [productCount, setProductCount] = useState(0)
   const [favCount, setFavCount] = useState(0)
   const [openModal, setOpenModal] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
+  const Modal = lazy(async ()=> await import('components/Utility/Modal'))
 
   useEffect(() => {
     setProductsData(data)
@@ -86,11 +86,13 @@ export const ShopApp = () => {
 			</div>
 			<Loader isLoading={loading} />
       <ProductList products={productsData} toggleFav={togglefav} />
-				{openModal && (
-					<Modal {...modalProps}>
-						<Form getSubmitResponse={getSubmitResponse} />
-					</Modal>
-				)}
+      <Suspense fallback={() => <p>Loading</p>}>
+        {openModal && (
+          <Modal {...modalProps}>
+            <Form getSubmitResponse={getSubmitResponse} />
+          </Modal>
+        )}
+      </Suspense>
     </div>
   )
 }
